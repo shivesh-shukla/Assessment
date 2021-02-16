@@ -1,0 +1,178 @@
+Call By Value---------------------
+
+
+#include <stdio.h>
+void fun(int a);
+int main ()
+
+{
+int a=10;
+
+printf ("%d\n", a);
+
+fun(a);
+
+return 0;
+
+}
+
+fun(int a)
+
+{
+
+a++;
+printf("%d",a);
+}
+
+----------------------------call by reference-----------
+
+
+#include <stdio.h>
+void fun(int *a);
+int main ()
+
+{
+int a=10;
+
+printf ("%d\n", a);
+
+fun(&a);
+
+return 0;
+
+}
+
+fun(int *a)
+
+{
+    
+    *a=*a+10;
+
+printf("%d",*a);
+}
+
+---------------------------------largest number in an array--------------------------
+
+
+
+#include<stdio.h>
+int main()
+{
+    int a[10],i,big=0;
+    printf("Enter the 10 elements\n");
+    for(i=0;i<10;i++)
+    {
+        scanf("%d",&a[i]);
+        if(a[i]>big)
+        big=a[i];
+    }
+    printf("Largest number is\t");
+    printf("%d",big);
+}
+
+
+------------------------------Largest Number-------------------------------
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int *a,i,big=0;
+    a=(int *)malloc(sizeof(int)*10);
+    printf("Enter 10 Elements\n");
+    for(i=0;i<10;i++)
+    {
+        scanf("%d",(a+i));
+        
+    }
+    printf("Elements are\n");
+    for(i=0;i<10;i++)
+    {
+    printf("%d\n",*(a+i));
+}
+for(i=0;i<10;i++)
+{
+    if(*(a+i)>big)
+    big=*(a+i);
+}
+printf("Largest Number is : %d",big);
+}
+
+---------------------------------------Search---------------------
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int *a,i,se,flag=0,index;
+    a=(int *)malloc(sizeof(int)*10);
+    printf("Enter 10 Elements\n");
+    for(i=0;i<10;i++)
+    {
+        scanf("%d",(a+i));
+        
+    }
+    printf("Elements are\n");
+    for(i=0;i<10;i++)
+    {
+    printf("%d\n",*(a+i));
+}
+printf("Enter The search element\n");
+scanf("%d",&se);
+for(i=0;i<10;i++)
+{
+   if(se==*(a+i))
+{
+ index=i;
+   flag=1;
+}  
+}
+if(flag==1)
+printf("Found at %d",index);
+else
+printf("Not Found");
+}
+
+-------------------------------Struct------------------
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct emp
+{
+  char id[10];
+  char name[10];
+  char add[10];
+};
+typedef struct emp semp;
+int main()
+{
+    int i;
+    semp *e1;
+    semp *e2;
+    semp *e3;
+    e1=(semp *)malloc(sizeof(semp));
+    e2=(semp *)malloc(sizeof(semp));
+    e3=(semp *)malloc(sizeof(semp));
+    strcpy(e1->id,"123");
+    strcpy(e1->name,"abc");
+    strcpy(e1->add,"bang");
+    strcpy(e2->id,"456");
+    strcpy(e2->name,"def");
+    strcpy(e2->add,"gkp");
+    strcpy(e3->id,"789");
+    strcpy(e3->name,"ghi");
+    strcpy(e3->add,"deo");
+    printf("%s\t",e1->id);
+    printf("%s\t",e1->name);
+    printf("%s\n",e1->add);
+    printf("%s\t",e2->id);
+    printf("%s\t",e2->name);
+    printf("%s\n",e2->add);
+    printf("%s\t",e3->id);
+    printf("%s\t",e3->name);
+    printf("%s\n",e3->add);
+    
+}
+    
